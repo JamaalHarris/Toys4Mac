@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+toy1 = Toy.create!(name: "lego", price: 10, image: "test")
+
+toy2 = Toy.create!(name: "yo-yo", price: 20, image: "test")
+
+toy3 = Toy.create!(name: "ball", price: 5, image: "test")
