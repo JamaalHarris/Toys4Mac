@@ -10,3 +10,5 @@ toy1 = Toy.create!(name: "lego", price: 10, image: "test")
 toy2 = Toy.create!(name: "yo-yo", price: 20, image: "test")
 
 toy3 = Toy.create!(name: "ball", price: 5, image: "test")
+
+toy4 = Toy.create!(name: "hoop", price: 50, image: "test")

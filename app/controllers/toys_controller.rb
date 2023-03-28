@@ -5,8 +5,7 @@ class ToysController < ApplicationController
   end
 
   def show
-    name = params[:name]
-    @toy = Toy.find_by(id: name)
+    @toy = Toy.find_by(id: params[:id])
     render template: "toys/show"
   end
 
@@ -26,12 +25,11 @@ class ToysController < ApplicationController
   end
 
   def update
-    name = params[:name]
-    toy = Toy.find_by(id: name)
+    toy = Toy.find_by(id: params[:id])
     toy.update(
       name: params[:name] || toy.name,
       price: params[:price] || toy.price,
-      image: params[:image] || toy.description,
+      image: params[:image] || toy.image,
     )
     if toy.valid?
       # happy path

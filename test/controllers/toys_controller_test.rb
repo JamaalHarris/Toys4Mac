@@ -21,7 +21,7 @@ class ToysControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
 
     data = JSON.parse(response.body)
-    assert_equal ["name", "price", "image", "created_at", "updated_at"], data.keys
+    assert_equal ["name", "price", "image"], data.keys
   end
 
   test "update" do
