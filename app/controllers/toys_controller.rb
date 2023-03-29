@@ -9,18 +9,23 @@ class ToysController < ApplicationController
     render template: "toys/show"
   end
 
+  def new
+    @toy = Toy.new
+    render :new
+  end
+
   def create
-    toy = Toy.new(
+    @toy = Toy.new(
       name: params[:name],
       price: params[:price],
       image: params[:image],
     )
-    if toy.save
+    if @toy.save
       # happy path
-      render json: toy.as_json
+      redirect_to "/toys"
     else
       # sad path
-      render json: { errors: toy.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: @toy.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

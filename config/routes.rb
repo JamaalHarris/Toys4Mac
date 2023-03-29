@@ -3,9 +3,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get "/toys" => "toys#index"
-  get "/toys/:id" => "toys#show"
-  post "/toys" => "toys#create"
-  patch "/toys/:id" => "toys#update"
-  delete "toys/:id" => "toys#destroy"
+  resources :toys
 end

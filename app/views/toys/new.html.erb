@@ -1,0 +1,19 @@
+<h1>New Toy</h1>
+<form method="post" action="/toys">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div>
+    <label>Name </label>
+    <input type="text" name="toy[name]">
+  </div>
+  <div>
+    <label>Width </label>
+    <input type="text" name="toy[price]">
+  </div>
+  <div>
+    <label>Height </label>
+    <input type="text" name="toy[image]">
+  </div>
+  <div>
+    <input type="submit" value="Create toy">
+  </div>
+</form>
