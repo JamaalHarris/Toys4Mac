@@ -1,0 +1,20 @@
+<h1>Edit toy</h1>
+<form method="post" action="/toys/<%= @photo.id %>">
+  <input type="hidden" name="_method" value="patch" autocomplete="off">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div>
+    <label>Name </label>
+    <input type="text" name="photo[name]" value="<%= @toy.name %>">
+  </div>
+  <div>
+    <label>Price </label>
+    <input type="text" name="toy[price]" value="<%= @toy.price %>">
+  </div>
+  <div>
+    <label>Image </label>
+    <input type="text" name="toy[image]" value="<%= @toy.image %>">
+  </div>
+  <div>
+    <input type="submit" value="Update toy">
+  </div>
+</form>

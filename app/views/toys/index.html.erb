@@ -1,8 +1,8 @@
-<h1>All photos</h1>
+<h1>All toys</h1>
 <% @toys.each do |toy| %>
   <h2><%= toy.name %></h2>
-  <p>Width: <%= toy.width %></p>
-  <p>Height: <%= toy.height %></p>
+  <p>Width: <%= toy.price %></p>
+  <p>Height: <%= toy.image %></p>
 <% end %>
 
 <a href="/toys/<%= toy.id %>">More info</a>

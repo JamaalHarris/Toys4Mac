@@ -1,5 +1,7 @@
-<h1>Photo info</h1>
+<h1>Toy info</h1>
 <h2><%= @toy.name %></h2>
-<p>Width: <%= @toy.width %></p>
-<p>Height: <%= @toy.height %></p>
-<a href="/toys">Back to all photos</a>
+<p>Price: <%= @toy.price %></p>
+<p>Image: <%= @toy.image %></p>
+<a href="/toys">Back to all toys</a>
+<a href="/toys/<%= @toy.id %>/edit">Edit toy</a>
+<a href="/toys/<%= @toy.id %>" data-turbo-method="delete">Destroy toy</a>

@@ -29,25 +29,30 @@ class ToysController < ApplicationController
     end
   end
 
+  def edit
+    @toy = Toy.find_by(id: params[:id])
+    render :edit
+  end
+
   def update
-    toy = Toy.find_by(id: params[:id])
-    toy.update(
+    @toy = Toy.find_by(id: params[:id])
+    @toy.update(
       name: params[:name] || toy.name,
       price: params[:price] || toy.price,
       image: params[:image] || toy.image,
     )
-    if toy.valid?
+    if @toy.valid?
       # happy path
-      render json: toy.as_json
+      redirect_to "/toys"
     else
       # sad path
-      render json: { errors: toy.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: @toy.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def destroy
-    toy = Toy.find_by(id: params[:id])
-    toy.destroy
-    render json: { message: "Toy Destroyed" }
+    @toy = Toy.find_by(id: params[:id])
+    @toy.destroy
+    redirect_to "/toys", status: :see_other
   end
 end
